@@ -160,9 +160,21 @@ CVSS::v2 - Parse and calculate CVSS v2.0 scores
     say $cvss->AV; # N
     say $cvss->accessVector; # NETWORK
 
-
 =head1 DESCRIPTION
 
+The Common Vulnerability Scoring System (CVSS) provides an open framework for 
+communicating the characteristics and impacts of IT vulnerabilities. CVSS 
+consists of 3 groups: Base, Temporal and Environmental. Each group produces a 
+numeric score ranging from 0 to 10, and a Vector, a compressed textual 
+representation that reflects the values used to derive the score. The Base 
+group represents the intrinsic qualities of a vulnerability. The Temporal group 
+reflects the characteristics of a vulnerability that change over time. The 
+Environmental group represents the characteristics of a vulnerability that are 
+unique to any user's environment. CVSS enables IT managers, vulnerability 
+bulletin providers, security vendors, application vendors and researchers to 
+all benefit by adopting this common language of scoring IT vulnerabilities.
+
+L<https://www.first.org/cvss/v2/guide>
 
 =head2 METHODS
 

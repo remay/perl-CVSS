@@ -239,6 +239,15 @@ L<CVSS::Base>, L<CVSS::v2>, L<CVSS::v3>, L<CVSS::v4>
 =back
 
 
+=head1 ACKNOWLEDGEMENTS
+
+This module is listed in the CVSS v4.0 Frequently Asked Questions by FIRST.Org
+(Forum of Incident Response and Security Teams) as a community CVSS calculator
+library.
+
+L<https://www.first.org/cvss/v4.0/faq#List-of-Calculator-Libraries>
+
+
 =head1 SUPPORT
 
 =head2 Bugs / Feature Requests
