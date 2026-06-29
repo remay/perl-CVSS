@@ -11,7 +11,7 @@ use List::Util qw(max min);
 use base 'CVSS::Base';
 use CVSS::Constants ();
 
-our $VERSION = '1.14';
+our $VERSION = '1.15';
 $VERSION =~ tr/_//d;    ## no critic
 
 use constant DEBUG => $ENV{CVSS_DEBUG};
@@ -537,7 +537,7 @@ DISTANCE: foreach my $max_vector (@max_vectors) {
     $value = max(0.0, $value);
     $value = min(10.0, $value);
 
-    my $base_score = sprintf('%.1f', $value);
+    my $base_score = int($value * 10 + 0.5) / 10;
 
     DEBUG and say STDERR "-- BaseScore: $base_score ($value)";
 
@@ -826,7 +826,7 @@ L<https://github.com/giterlizzi/perl-CVSS>
 
 =head1 LICENSE AND COPYRIGHT
 
-This software is copyright (c) 2023-2025 by Giuseppe Di Terlizzi.
+This software is copyright (c) 2023-2026 by Giuseppe Di Terlizzi.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
