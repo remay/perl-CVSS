@@ -10,9 +10,9 @@ use Exporter qw(import);
 
 use constant DEBUG => $ENV{CVSS_DEBUG};
 
-use CVSS::v2 ();
-use CVSS::v3 ();
-use CVSS::v4 ();
+use CVSS::v2;
+use CVSS::v3;
+use CVSS::v4;
 
 our @EXPORT = qw(encode_cvss decode_cvss cvss_to_xml);
 
