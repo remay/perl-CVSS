@@ -94,6 +94,10 @@ sub METRIC_VALUES       { {} }
 sub _metric_name_to_value {
     my ($self, $metric, $name) = @_;
     $name =~ s/\s/_/g;
+    if(not exists $self->METRIC_NAMES->{$metric}->{names}->{$name}) {
+        Carp::croak "Unknown metric name '$name' for metric '$metric'. Allowed values are: "
+	    . join(',', keys %{$self->METRIC_NAMES->{$metric}->{names}});
+    }
     $self->metrics->{$metric} = $self->METRIC_NAMES->{$metric}->{names}->{$name};
     return $self;
 }
