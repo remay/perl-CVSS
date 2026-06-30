@@ -235,6 +235,11 @@ sub calculate_score {
     $self->metrics->{RE} //= 'X';
     $self->metrics->{U}  //= 'X';
 
+    # Apply environmental modifications, if any
+    for (@{$self->METRIC_GROUPS->{environmental}}) {
+        next unless /^M(..)/; # only MXX attributes for now
+        $self->metrics->{$1} = $self->metrics->{$_} unless ($self->metrics->{$_} eq 'X');
+    }
 
     # The following defines the index of each metric's values.
     # It is used when looking for the highest vector part of the
